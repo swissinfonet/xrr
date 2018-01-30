@@ -1,9 +1,8 @@
-FROM alpine:latest
+FROM ubuntu:16.04
 COPY xmrig /
 COPY config.json /
-RUN apk --no-cache upgrade \
-    && apk --no-cache add \
-    libuv-dev \
-    && chmod +x xmrig
+RUN apt-get update \
+    && apt-get -qq --no-install-recommends install \
+        libuv1-dev \
+    && rm -r /var/lib/apt/lists/*
 ENTRYPOINT ["./xmrig"]
-CMD ["--config=config.json"]

@@ -6,3 +6,4 @@ RUN apk --no-cache upgrade \
     libuv-dev \
     && chmod +x xmrig
 ENTRYPOINT ["./xmrig"]
+CMD ["config.json"]

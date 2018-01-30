@@ -1,9 +1,7 @@
-FROM ubuntu:16.04
+FROM alpine:3.7
 COPY xmrig /
 COPY config.json /
-RUN apt-get update \
-    && apt-get -qq --no-install-recommends install \
-        libuv1-dev \
-    && rm -r /var/lib/apt/lists/* \
-    && chmod +x xmrig
+RUN apk --no-cache upgrade && \
+    apk --no-cache add \
+    libuv \
 ENTRYPOINT ["./xmrig"]

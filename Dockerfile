@@ -1,7 +1,5 @@
 FROM alpine:3.7
 COPY xmrig /
 COPY config.json /
-RUN apk --no-cache upgrade && \
-    apk --no-cache add \
-    libuv \
+RUN apk add --update libuv && rm -rf /var/cache/apk/*
 ENTRYPOINT ["./xmrig"]
